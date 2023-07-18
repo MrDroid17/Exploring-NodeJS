@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FaGithub} from 'react-icons/fa'
+import { FcGoogle} from 'react-icons/fc'
 
 class Header extends Component {
   renderContent() {
@@ -9,9 +11,10 @@ class Header extends Component {
         return;
       case false:
         return (
-          <li>
-            <a href={'/auth/google'}>Login With Google</a>
-          </li>
+          <div style = {{display: 'flex', justifyContent: 'flex-end'}}> 
+            <a href={'/auth/github'}>Login With Github <FaGithub/></a>
+            <a href={'/auth/google'}>Login With Google <FcGoogle/></a>
+          </div>
         );
       default:
         return [
